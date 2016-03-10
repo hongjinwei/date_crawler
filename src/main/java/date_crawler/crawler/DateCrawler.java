@@ -16,6 +16,7 @@ import org.jsoup.select.Elements;
 import com.peony.util.http.HttpQuery;
 
 import date_crawler.date_utils.DateIterator;
+import date_crawler.date_utils.MyDate;
 
 public class DateCrawler {
 
@@ -59,6 +60,13 @@ public class DateCrawler {
 		String html = browser.post(url, params).asString();
 
 		return excludeNoise(html);
+	}
+
+	public String craw(MyDate date) throws Exception {
+		int y = date.getYear();
+		int m = date.getMonth();
+		int d = date.getDate();
+		return craw(y, m, d);
 	}
 
 	public String craw(DateIterator iter) throws Exception {

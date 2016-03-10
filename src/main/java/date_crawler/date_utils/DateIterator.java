@@ -90,8 +90,7 @@ public class DateIterator {
 			now.nextNDay(dayGap);
 			if (nothingLeft) {
 				return null;
-			}
-			if (now.after(end)) {
+			} else if (now.after(end)) {
 				this.setDate(end);
 				nothingLeft = true;
 			}

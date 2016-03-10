@@ -13,6 +13,7 @@ public class DetailedDate {
 	// 一个公历日可以对应多个阴历日子，主要是年号可能有多个
 	List<LunarDate> lunarDates = new ArrayList<LunarDate>();
 
+
 	public int getYear() {
 		return date.getYear();
 	}

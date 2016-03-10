@@ -13,7 +13,7 @@ public class LunarDate {
 	// 元年（1年） 2年 3年
 	private int lunarYear;
 
-	private int lunarMonth;
+	private String lunarMonth;
 
 	private int lunarDate;
 
@@ -21,7 +21,7 @@ public class LunarDate {
 
 	}
 
-	public LunarDate(String empirename, int lunaryear, String hseb, int lunarmon, int lunarday) {
+	public LunarDate(String empirename, int lunaryear, String hseb, String lunarmon, int lunarday) {
 		this.empireName = empirename;
 		this.lunarYear = lunaryear;
 		this.hseb = hseb;
@@ -45,11 +45,11 @@ public class LunarDate {
 		this.hseb = hseb;
 	}
 
-	public int getLunarMonth() {
+	public String getLunarMonth() {
 		return lunarMonth;
 	}
 
-	public void setLunarMonth(int lunarMonth) {
+	public void setLunarMonth(String lunarMonth) {
 		this.lunarMonth = lunarMonth;
 	}
 

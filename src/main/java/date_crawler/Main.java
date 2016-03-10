@@ -32,6 +32,9 @@ public class Main {
 			iter.setStartDate(startyear, startmon, startdate);
 		}
 
+		iter.setStartDate(1891, 12, 6);
+		iter.setEndDate(1892, 1, 29);
+
 		while (iter.hasNext()) {
 
 			try {
@@ -44,7 +47,7 @@ public class Main {
 					dd.show();
 				} else if (end == null) {
 					end = dd;
-					List<DetailedDate> ans = DateUtils.generateGapDate(begin, end, dayGap);
+					List<DetailedDate> ans = DateUtils.generateGapDate(begin, end);
 					for (int i = 0; i < ans.size(); i++) {
 						ans.get(i).show();
 					}
@@ -52,15 +55,18 @@ public class Main {
 				} else {
 					begin = end;
 					end = dd;
-					List<DetailedDate> ans = DateUtils.generateGapDate(begin, end, dayGap);
+					List<DetailedDate> ans = DateUtils.generateGapDate(begin, end);
 					for (int i = 0; i < ans.size(); i++) {
 						ans.get(i).show();
 					}
 					end.show();
 				}
-				TimerUtils.delayForSeconds(1);
+				// TimerUtils.delayForSeconds(1);
 			} catch (Exception e) {
 				System.out.println("error 网络错误");
+				e.printStackTrace();
+				begin = end;
+				end = null;
 			}
 		}
 	}
